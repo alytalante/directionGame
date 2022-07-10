@@ -1,12 +1,16 @@
 <template>
   <div class="main">
     <div class="box">
-      <strong>Remaining Attempts: </strong>{{ attemptsRemaining }}/3
+      <strong>Remaining Attempts: </strong>
+      <span class="health">{{ attemptsRemaining }}/3</span>
     </div>
     <div class="box">
       <strong>Health: </strong><span class="health">{{ displayHealth }}</span>
     </div>
-    <div class="box"><strong>Ability Points: </strong>{{ abilityPoints }}</div>
+    <div class="box">
+      <strong>Ability Points: </strong>
+      <span class="health">{{ abilityPoints }} </span>
+    </div>
     <div class="Upgrades box">
       <table>
         <tr>
@@ -115,5 +119,6 @@ td {
 .health {
   color: #8685ef;
   display: inline;
+  font-weight: 900;
 }
 </style>

@@ -2,19 +2,48 @@
   <div class="main">
     <div class="attack" @click="$emit('attack', fastAttack)">
       <strong>Fast Attack:</strong>
-
-      {{ fastAttack.speed / 1000 }}s, {{ fastAttack.stack }},
-      {{ fastAttack.scoreArray }}
+      <table>
+        <tr>
+          <td>Time</td>
+          <td>Stack</td>
+          <td>Mod</td>
+        </tr>
+        <tr>
+          <td>{{ fastAttack.speed / 1000 }}s</td>
+          <td>{{ fastAttack.stack }}</td>
+          <td>{{ fastAttack.scoreArray }}</td>
+        </tr>
+      </table>
     </div>
     <div class="attack" @click="$emit('attack', normalAttack)">
       <strong>Normal Attack:</strong>
-      {{ normalAttack.speed / 1000 }}s, {{ normalAttack.stack }},
-      {{ normalAttack.scoreArray }}
+      <table>
+        <tr>
+          <td>Time</td>
+          <td>Stack</td>
+          <td>Mod</td>
+        </tr>
+        <tr>
+          <td>{{ normalAttack.speed / 1000 }}s</td>
+          <td>{{ normalAttack.stack }}</td>
+          <td>{{ normalAttack.scoreArray }}</td>
+        </tr>
+      </table>
     </div>
     <div class="attack" @click="$emit('attack', slowAttack)">
       <strong>Slow Attack:</strong>
-      {{ slowAttack.speed / 1000 }}s, {{ slowAttack.stack }},
-      {{ slowAttack.scoreArray }}
+      <table>
+        <tr>
+          <td>Time</td>
+          <td>Stack</td>
+          <td>Mod</td>
+        </tr>
+        <tr>
+          <td>{{ slowAttack.speed / 1000 }}s</td>
+          <td>{{ slowAttack.stack }}</td>
+          <td>{{ slowAttack.scoreArray }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -99,5 +128,23 @@ export default {
   display: grid;
   align-items: center;
   background-color: #8685ef;
+}
+
+.statFlex {
+  display: flex;
+}
+.stat {
+  flex: 1;
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 3px 0 3px;
+}
+
+tr,
+td {
+  border: 1px solid black;
 }
 </style>

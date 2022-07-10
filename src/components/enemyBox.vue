@@ -52,7 +52,7 @@ export default {
     attemptsRemaining(newValue) {
       if (newValue === 0) {
         if (this.total > this.par) {
-          this.dificultyModifier = this.dificultyModifier + 0.12;
+          this.dificultyModifier = this.dificultyModifier + 0.14;
           this.$emit("success", { status: "success" });
           setTimeout(() => {
             this.total = 0;

@@ -120,9 +120,11 @@ export default {
 };
 </script>
 
-<style scoped>
-body {
+<style>
+body,
+html {
   padding: 0;
+  background-color: #191919;
   margin: 0;
 }
 #app {

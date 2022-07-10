@@ -203,12 +203,14 @@ export default {
         }
       }
       if (
-        e.key == "d" ||
-        e.key == "ArrowRight" ||
-        e.key == "a" ||
-        e.key == "w" ||
-        e.key == "ArrowLeft" ||
-        e.key == "ArrowUp"
+        this.openingPlay === false &&
+        this.isGameOver === false &&
+        (e.key == "d" ||
+          e.key == "ArrowRight" ||
+          e.key == "a" ||
+          e.key == "w" ||
+          e.key == "ArrowLeft" ||
+          e.key == "ArrowUp")
       ) {
         if (this.isKeyPressed === false) {
           this.checkInput(e.key);
@@ -239,7 +241,7 @@ export default {
   width: 50px;
   height: 220px;
   width: 220px;
-  font-size: 10rem;
+  font-size: 5rem;
   display: grid;
   margin: 0 auto;
   align-items: center;
@@ -251,7 +253,7 @@ export default {
   width: 50px;
   height: 220px;
   width: 220px;
-  font-size: 10rem;
+  font-size: 5rem;
   display: grid;
   margin: 0 auto;
   margin-top: 0;
