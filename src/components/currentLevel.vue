@@ -12,13 +12,14 @@
       <span class="health">{{ abilityPoints }} </span>
     </div>
     <div class="Upgrades box">
+      <strong>Spend Points:</strong>
       <table>
         <tr>
           <td></td>
           <td>Stack</td>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
+          <td class="ok">1</td>
+          <td class="good">2</td>
+          <td class="perfect">3</td>
         </tr>
         <tr>
           <td>Fast</td>
@@ -97,7 +98,7 @@ export default {
   flex-direction: column;
 }
 .Upgrades {
-  text-align: left;
+  text-align: center;
 }
 
 table {
@@ -120,5 +121,16 @@ td {
   color: #8685ef;
   display: inline;
   font-weight: 900;
+}
+.ok {
+  background-color: #65fbd2;
+}
+
+.good {
+  background-color: #23a7b8;
+}
+.perfect {
+  color: #ededed;
+  background-color: #3a586e;
 }
 </style>

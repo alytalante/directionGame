@@ -11,7 +11,11 @@
         <tr>
           <td>{{ fastAttack.speed / 1000 }}s</td>
           <td>{{ fastAttack.stack }}</td>
-          <td>{{ fastAttack.scoreArray }}</td>
+          <td class="mod">
+            <div class="ok">{{ fastAttack.scoreArray[0] }}</div>
+            <div class="good">{{ fastAttack.scoreArray[1] }}</div>
+            <div class="perfect">{{ fastAttack.scoreArray[2] }}</div>
+          </td>
         </tr>
       </table>
     </div>
@@ -26,7 +30,11 @@
         <tr>
           <td>{{ normalAttack.speed / 1000 }}s</td>
           <td>{{ normalAttack.stack }}</td>
-          <td>{{ normalAttack.scoreArray }}</td>
+          <td class="mod">
+            <div class="ok">{{ normalAttack.scoreArray[0] }}</div>
+            <div class="good">{{ normalAttack.scoreArray[1] }}</div>
+            <div class="perfect">{{ normalAttack.scoreArray[2] }}</div>
+          </td>
         </tr>
       </table>
     </div>
@@ -41,7 +49,11 @@
         <tr>
           <td>{{ slowAttack.speed / 1000 }}s</td>
           <td>{{ slowAttack.stack }}</td>
-          <td>{{ slowAttack.scoreArray }}</td>
+          <td class="mod">
+            <div class="ok">{{ slowAttack.scoreArray[0] }}</div>
+            <div class="good">{{ slowAttack.scoreArray[1] }}</div>
+            <div class="perfect">{{ slowAttack.scoreArray[2] }}</div>
+          </td>
         </tr>
       </table>
     </div>
@@ -136,6 +148,26 @@ export default {
 .stat {
   flex: 1;
   border: 1px solid black;
+}
+
+.mod {
+  display: flex;
+  border: none;
+}
+
+.ok {
+  background-color: #65fbd2;
+  flex: 1;
+}
+
+.good {
+  background-color: #23a7b8;
+  flex: 1;
+}
+.perfect {
+  color: #ededed;
+  background-color: #3a586e;
+  flex: 1;
 }
 
 table {
