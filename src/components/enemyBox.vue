@@ -35,6 +35,7 @@ export default {
       lvl1Rng: Math.floor(Math.random() * (4 - 0 + 1)) + 0,
       total: 0,
       par: 0,
+      dificultyModifier: 1,
     };
   },
   props: {
@@ -51,6 +52,7 @@ export default {
     attemptsRemaining(newValue) {
       if (newValue === 0) {
         if (this.total > this.par) {
+          this.dificultyModifier = this.dificultyModifier + 0.12;
           this.$emit("success", { status: "success" });
           setTimeout(() => {
             this.total = 0;
@@ -71,7 +73,9 @@ export default {
     generatePar() {
       const min = 100;
       const max = 115;
-      this.par = Math.floor(Math.random() * (max - min + 1)) + min;
+      const beforemultiplier =
+        Math.floor(Math.random() * (max - min + 1)) + min;
+      this.par = parseInt(beforemultiplier * this.dificultyModifier);
     },
   },
   created() {
