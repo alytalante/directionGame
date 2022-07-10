@@ -23,8 +23,14 @@
     v-if="!isGameOver"
     :class="{ box: isUnpressed, boxPressed: !isUnpressed }"
   >
-    <div>
+    <div v-if="!openingPlay">
       {{ icon }}
+    </div>
+    <div class="enter" v-if="openingPlay">
+      Press <br />
+      Enter <br />
+      To<br />
+      Begin
     </div>
   </div>
   <div
@@ -145,7 +151,7 @@ export default {
       this.timerColor = "#20B2AA";
       this.timer = null;
 
-      this.icon = "E";
+      this.icon = "Press Enter";
       this.determineTimeDivision(this.speed);
       this.time = this.speed;
       this.openingPlay = true;
@@ -182,7 +188,7 @@ export default {
     },
   },
   created() {
-    this.icon = "E";
+    this.icon = "Press Enter";
     this.determineTimeDivision(this.speed);
     this.time = this.speed;
     this.remainingStack = this.stack;
@@ -279,5 +285,10 @@ export default {
 
 .infoBox {
   width: 110px;
+}
+.enter {
+  font-weight: bold;
+  font-size: 2.3rem;
+  line-height: 2.3rem;
 }
 </style>
