@@ -139,7 +139,7 @@ export default {
   cursor: pointer;
   display: grid;
   align-items: center;
-  background-color: #8685ef;
+  background-color: #aca7cb;
 }
 
 .statFlex {
@@ -171,6 +171,7 @@ export default {
 }
 
 table {
+  background-color: #ededed;
   border-collapse: collapse;
   margin: 0 3px 0 3px;
 }
