@@ -43,10 +43,9 @@ export default {
   },
   watch: {
     incomingScore(newValue) {
-      console.log(newValue);
       if (this.attemptsRemaining !== -1) {
         console.log("Incoming SCORE RECIEVED");
-        this.total = this.total + this.incomingScore;
+        this.total = this.total + parseInt(this.incomingScore);
       }
     },
     attemptsRemaining(newValue) {

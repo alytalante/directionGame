@@ -68,10 +68,11 @@ export default {
       this.scoreArray = attack.scoreArray;
     },
     endTurn(i) {
+      const smallRng = Math.random() / 100;
+      this.score = i.score + smallRng;
       console.log("TURN DATA RECIEVED");
       console.log(i);
       console.log(this.attemptsRemaining);
-      this.score = i.score;
       this.attemptsRemaining = this.attemptsRemaining - 1;
     },
     handleFail(i) {

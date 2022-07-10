@@ -30,7 +30,7 @@ export default {
       normalAttack: {
         stack: 10,
         speed: 1000,
-        scoreArray: [1, 2, 6.5],
+        scoreArray: [1, 2, 6],
       },
       slowAttack: {
         stack: 15,
