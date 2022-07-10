@@ -12,8 +12,12 @@
   align-items: center;
   place-items: center;
   margin: 2px auto;
-  background-color: lightpink;
+  background-color: #8685ef;
   cursor: pointer;
   font-size: 0.9rem;
+}
+
+.plus:hover {
+  background-color: #aca7cb;
 }
 </style>

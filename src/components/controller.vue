@@ -60,7 +60,7 @@ body {
   padding-top: 20px;
 }
 .Flex {
-  background-color: white;
+  background-color: #ededed;
   display: flex;
   border: 1px solid black;
   width: 200px;

@@ -1,6 +1,8 @@
 <template>
   <div class="levelBox">
-    <h2>Level {{ level }}</h2>
+    <h2>
+      <strong>Level {{ level }}</strong>
+    </h2>
   </div>
   <EnemyBox
     :incomingScore="score"
@@ -118,7 +120,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
   padding: 0;
   margin: 0;
@@ -134,7 +136,7 @@ body {
   padding-top: 20px;
 }
 .Flex {
-  background-color: white;
+  background-color: #ededed;
   display: flex;
   border: 1px solid black;
   width: 200px;
@@ -149,12 +151,13 @@ body {
   margin-top: 2px;
 }
 .levelBox {
-  background-color: white;
+  background-color: #ededed;
   max-width: 666px;
   margin: 2px auto;
   border: 1px solid black;
 }
 h2 {
+  font-weight: bolder;
   margin: 4px;
 }
 </style>

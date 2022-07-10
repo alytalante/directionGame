@@ -86,7 +86,7 @@ export default {
 
 <style>
 .enemyBox {
-  background-color: white;
+  background-color: #ededed;
   width: 220px;
   height: 200px;
   border: 1px solid black;

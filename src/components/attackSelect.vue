@@ -78,7 +78,7 @@ export default {
 .main {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #ededed;
   border: 1px solid black;
   border-right: 0px;
   border-bottom: 0;
@@ -98,6 +98,6 @@ export default {
   cursor: pointer;
   display: grid;
   align-items: center;
-  background-color: lightskyblue;
+  background-color: #8685ef;
 }
 </style>

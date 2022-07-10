@@ -84,7 +84,7 @@ export default {
 
 <style scoped>
 .main {
-  background-color: white;
+  background-color: #ededed;
   border: 1px solid black;
   border-top: 0;
   border-left: 0px;
@@ -113,7 +113,7 @@ td {
   border-top: 1px solid black;
 }
 .health {
-  color: red;
+  color: #8685ef;
   display: inline;
 }
 </style>

@@ -70,7 +70,7 @@ export default {
   height: 50px;
   width: 50px;
   font-size: 2rem;
-  background-color: white;
+  background-color: #ededed;
 }
 
 .boxPressed {
@@ -78,6 +78,6 @@ export default {
   height: 50px;
   width: 50px;
   font-size: 2rem;
-  background-color: lightcoral;
+  background-color: #8685ef;
 }
 </style>

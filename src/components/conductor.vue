@@ -64,7 +64,7 @@ export default {
       time: 1000,
       isGameOver: false,
       score: 0,
-      timerColor: "#20B2AA",
+      timerColor: "#3A586E",
       timer: null,
     };
   },
@@ -80,13 +80,13 @@ export default {
 
       if (newValue < uppLimit && newValue > firstMarker) {
         this.scoreIncrament = this.scoreArray[2];
-        this.timerColor = "#20B2AA";
+        this.timerColor = "#3A586E";
       } else if (newValue < firstMarker + 1 && newValue > secondMarker) {
         this.scoreIncrament = this.scoreArray[1];
-        this.timerColor = "lightpink";
+        this.timerColor = "#23A7B8";
       } else {
         this.scoreIncrament = this.scoreArray[0];
-        this.timerColor = "yellow";
+        this.timerColor = "#65FBD2";
       }
     },
     remainingStack(newValue) {
@@ -234,7 +234,7 @@ export default {
 
 <style scoped>
 .box {
-  background-color: white;
+  background-color: #ededed;
   border: 1px solid black;
   width: 50px;
   height: 220px;
@@ -257,7 +257,7 @@ export default {
   margin-top: 0;
   align-items: center;
   border-bottom: 0;
-  background-color: lightgreen;
+  background-color: #d3fbd8;
 }
 .time {
   margin: 0 auto;
@@ -265,7 +265,7 @@ export default {
 }
 
 .timeBox {
-  background-color: white;
+  background-color: #ededed;
   border: 1px solid #000000;
   border-bottom: 0;
   width: 220px;
@@ -273,7 +273,7 @@ export default {
 }
 
 .info {
-  background-color: white;
+  background-color: #ededed;
   width: 220px;
   margin: 0 auto;
   border: 1px solid black;
