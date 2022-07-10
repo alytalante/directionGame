@@ -1,8 +1,12 @@
 <template>
   <div class="main">
-    <div class="box">Remaining Attempts: {{ attemptsRemaining }}/3</div>
-    <div class="box">Health: {{ displayHealth }}</div>
-    <div class="box">Ability Points: {{ abilityPoints }}</div>
+    <div class="box">
+      <strong>Remaining Attempts: </strong>{{ attemptsRemaining }}/3
+    </div>
+    <div class="box">
+      <strong>Health: </strong><span class="health">{{ displayHealth }}</span>
+    </div>
+    <div class="box"><strong>Ability Points: </strong>{{ abilityPoints }}</div>
     <div class="Upgrades box">
       <table>
         <tr>
@@ -14,24 +18,24 @@
         </tr>
         <tr>
           <td>Fast</td>
-          <td><PlusButton /></td>
-          <td><PlusButton /></td>
-          <td><PlusButton /></td>
-          <td><PlusButton /></td>
+          <td><PlusButton @click="spendPoints('FS')" /></td>
+          <td><PlusButton @click="spendPoints('F1')" /></td>
+          <td><PlusButton @click="spendPoints('F2')" /></td>
+          <td><PlusButton @click="spendPoints('F3')" /></td>
         </tr>
         <tr>
           <td>Normal</td>
-          <td><PlusButton /></td>
-          <td><PlusButton /></td>
-          <td><PlusButton /></td>
-          <td><PlusButton /></td>
+          <td><PlusButton @click="spendPoints('NS')" /></td>
+          <td><PlusButton @click="spendPoints('N1')" /></td>
+          <td><PlusButton @click="spendPoints('N2')" /></td>
+          <td><PlusButton @click="spendPoints('N3')" /></td>
         </tr>
         <tr>
           <td>Slow</td>
-          <td><PlusButton /></td>
-          <td><PlusButton /></td>
-          <td><PlusButton /></td>
-          <td><PlusButton /></td>
+          <td><PlusButton @click="spendPoints('SS')" /></td>
+          <td><PlusButton @click="spendPoints('S1')" /></td>
+          <td><PlusButton @click="spendPoints('S2')" /></td>
+          <td><PlusButton @click="spendPoints('S3')" /></td>
         </tr>
       </table>
     </div>
@@ -42,19 +46,20 @@
 import PlusButton from "./plusButton.vue";
 
 export default {
+  emits: ["skillUp"],
   components: {
     PlusButton,
   },
   data() {
     return {
       attempts: 3,
-      abilityPoints: 0,
       displayHealth: "♥ ♥ ♥",
     };
   },
   props: {
     attemptsRemaining: Number,
     health: Number,
+    abilityPoints: Number,
   },
   watch: {
     health(newValue) {
@@ -64,6 +69,13 @@ export default {
         this.displayHealth = "♥";
       } else if (newValue === 0) {
         this.displayHealth = "";
+      }
+    },
+  },
+  methods: {
+    spendPoints(skill) {
+      if (this.abilityPoints > 0) {
+        this.$emit("skillUp", skill);
       }
     },
   },
@@ -99,5 +111,9 @@ td {
   place-items: center;
   flex: 1;
   border-top: 1px solid black;
+}
+.health {
+  color: red;
+  display: inline;
 }
 </style>

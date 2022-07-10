@@ -1,4 +1,7 @@
 <template>
+  <div class="levelBox">
+    <h2>Level {{ level }}</h2>
+  </div>
   <EnemyBox
     :incomingScore="score"
     :attemptsRemaining="attemptsRemaining"
@@ -15,6 +18,7 @@
   />
   <div class="appFlex">
     <AttackSelect
+      :skillChange="skillChange"
       @attack="
         (i) => {
           this.registerAttackSelection(i);
@@ -33,7 +37,16 @@
         "
       />
     </div>
-    <CurrentLevel :attemptsRemaining="attemptsRemaining" :health="health" />
+    <CurrentLevel
+      :attemptsRemaining="attemptsRemaining"
+      :health="health"
+      :abilityPoints="abilityPoints"
+      @skillUp="
+        (i) => {
+          handleSkillUp(i);
+        }
+      "
+    />
   </div>
 </template>
 
@@ -44,7 +57,7 @@ import CurrentLevel from "./components/currentLevel.vue";
 import EnemyBox from "./components/enemyBox.vue";
 
 export default {
-  emits: ["fail", "success"],
+  emits: ["fail", "success", "skillUp"],
   components: {
     Controller,
     AttackSelect,
@@ -53,13 +66,23 @@ export default {
   },
   data() {
     return {
+      level: 1,
       stack: 10,
       speed: 1000,
       scoreArray: [1, 2, 6.5],
       score: 0,
       attemptsRemaining: 3,
+      abilityPoints: 0,
       health: 3,
+      skillChange: null,
     };
+  },
+  watch: {
+    level(newValue) {
+      if (newValue % 2 === 0) {
+        this.abilityPoints++;
+      }
+    },
   },
   methods: {
     registerAttackSelection(attack) {
@@ -82,7 +105,14 @@ export default {
       }
     },
     handleSuccess(i) {
+      this.level++;
       this.attemptsRemaining = 3;
+    },
+    handleSkillUp(i) {
+      this.abilityPoints = this.abilityPoints - 1;
+      this.skillChange = {
+        status: i,
+      };
     },
   },
 };
@@ -117,5 +147,14 @@ body {
   justify-content: center;
   gap: 2px;
   margin-top: 2px;
+}
+.levelBox {
+  background-color: white;
+  max-width: 666px;
+  margin: 2px auto;
+  border: 1px solid black;
+}
+h2 {
+  margin: 4px;
 }
 </style>

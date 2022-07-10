@@ -20,6 +20,9 @@
 </template>
 <script>
 export default {
+  props: {
+    skillChange: Object,
+  },
   data() {
     return {
       fastAttack: {
@@ -38,6 +41,35 @@ export default {
         scoreArray: [1, 2, 4],
       },
     };
+  },
+  watch: {
+    skillChange(newValue) {
+      if (newValue.status === "FS") {
+        this.fastAttack.stack++;
+      } else if (newValue.status === "F1") {
+        this.fastAttack.scoreArray[0]++;
+      } else if (newValue.status === "F2") {
+        this.fastAttack.scoreArray[1]++;
+      } else if (newValue.status === "F3") {
+        this.fastAttack.scoreArray[2]++;
+      } else if (newValue.status === "NS") {
+        this.normalAttack.stack++;
+      } else if (newValue.status === "N1") {
+        this.normalAttack.scoreArray[0]++;
+      } else if (newValue.status === "N2") {
+        this.normalAttack.scoreArray[1]++;
+      } else if (newValue.status === "N3") {
+        this.normalAttack.scoreArray[2]++;
+      } else if (newValue.status === "SS") {
+        this.slowAttack.stack++;
+      } else if (newValue.status === "S1") {
+        this.slowAttack.scoreArray[0]++;
+      } else if (newValue.status === "S2") {
+        this.slowAttack.scoreArray[1]++;
+      } else if (newValue.status === "S3") {
+        this.slowAttack.scoreArray[2]++;
+      }
+    },
   },
 };
 </script>
