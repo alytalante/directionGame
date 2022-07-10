@@ -44,6 +44,7 @@ import CurrentLevel from "./components/currentLevel.vue";
 import EnemyBox from "./components/enemyBox.vue";
 
 export default {
+  emits: ["fail", "success"],
   components: {
     Controller,
     AttackSelect,
@@ -67,8 +68,11 @@ export default {
       this.scoreArray = attack.scoreArray;
     },
     endTurn(i) {
-      this.attemptsRemaining = this.attemptsRemaining - 1;
+      console.log("TURN DATA RECIEVED");
+      console.log(i);
+      console.log(this.attemptsRemaining);
       this.score = i.score;
+      this.attemptsRemaining = this.attemptsRemaining - 1;
     },
     handleFail(i) {
       this.health = this.health - 1;

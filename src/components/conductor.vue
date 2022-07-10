@@ -93,6 +93,7 @@ export default {
     },
     isGameOver(newValue) {
       if (newValue === true) {
+        console.log("TURN DATA SENT");
         this.$emit("turn", { score: this.score });
       }
     },

@@ -28,7 +28,7 @@ import flame from "../assets/flame.png";
 import fire from "../assets/fire.png";
 
 export default {
-  emits: ["fail"],
+  emits: ["fail", "success"],
   data() {
     return {
       levelOneMonsters: [bat, crow, snake, flame, fire],
@@ -43,7 +43,9 @@ export default {
   },
   watch: {
     incomingScore(newValue) {
-      if (this.attemptsRemaining > -1) {
+      console.log(newValue);
+      if (this.attemptsRemaining !== -1) {
+        console.log("Incoming SCORE RECIEVED");
         this.total = this.total + this.incomingScore;
       }
     },
